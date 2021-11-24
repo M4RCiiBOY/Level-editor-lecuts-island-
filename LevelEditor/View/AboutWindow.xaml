@@ -1,0 +1,29 @@
+﻿<Window x:Class="LevelEditor.View.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LevelEditor.View"
+        mc:Ignorable="d"
+        Title="Help" Height="600" Width="800" MinWidth="800" MinHeight="600" MaxWidth="800" MaxHeight="600">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" FontSize="16" Height="30" Foreground="White" Background="#FF3F3F46" FontStyle="Italic">
+            FAQ
+        </TextBlock>
+        <TextBlock DockPanel.Dock="Top" FontSize="12" Foreground="White" Background="#FF3F3F46" FontStyle="Italic">
+            Q: How can you add objects to the map?
+        </TextBlock>
+        <TextBlock DockPanel.Dock="Top" Height="30" FontSize="12" Foreground="White" Background="#FF3F3F46" FontStyle="Italic">
+            A: Click on "Edit Object Layer" in the toolbar, a new window will open where you can see and edit the objects on the map.
+        </TextBlock>
+        <TextBlock DockPanel.Dock="Top" FontSize="12" Foreground="White" Background="#FF3F3F46" FontStyle="Italic">
+            Q: How can I use the map file in Unity?
+        </TextBlock>
+        <TextBlock DockPanel.Dock="Top" Height="30" FontSize="12" Foreground="White" Background="#FF3F3F46" FontStyle="Italic">
+            A: Use the included Unity Project (or its scripts) and place the map file in /Assets/MapXML/ (more info in a txt file in said folder).
+        </TextBlock>
+        <TextBlock DockPanel.Dock="Top" FontSize="16" Foreground="White" Background="#FF3F3F46" FontStyle="Italic">
+            FAQ
+        </TextBlock>
+    </DockPanel>
+</Window>

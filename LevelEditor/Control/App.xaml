@@ -1,0 +1,9 @@
+﻿<Application x:Class="LevelEditor.Control.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LevelEditor"
+             StartupUri="View\MainWindow.xaml" Activated="OnActivated" Startup="OnStartup">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

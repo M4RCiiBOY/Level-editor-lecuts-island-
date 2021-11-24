@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0598BA4D-AC34-4059-AD6E-23EEB6C81DDF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LevelEditor</RootNamespace>
+    <AssemblyName>LevelEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Control\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="View\BrushWindow.xaml.cs">
+      <DependentUpon>BrushWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewMapWindow.xaml.cs">
+      <DependentUpon>NewMapWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ObjectWindow.xaml.cs">
+      <DependentUpon>ObjectWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BrushWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Control\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Map.cs" />
+    <Compile Include="Model\MapTile.cs" />
+    <Compile Include="Model\MapTileType.cs" />
+    <Compile Include="Model\Vector2.cs" />
+    <Compile Include="View\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\NewMapWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ObjectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\action_create_16xLG.png" />
+    <Resource Include="Resources\Icons\Symbols_Help_and_inclusive_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\appbar.disk.png" />
+    <Resource Include="Resources\Icons\appbar.folder.open.png" />
+    <Resource Include="Resources\Icons\appbar.lightbulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\appbar.page.new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tiles\forest_64\0.png" />
+    <Resource Include="Resources\Tiles\forest_64\1.png" />
+    <Resource Include="Resources\Tiles\forest_64\10.png" />
+    <Resource Include="Resources\Tiles\forest_64\100.png" />
+    <Resource Include="Resources\Tiles\forest_64\101.png" />
+    <Resource Include="Resources\Tiles\forest_64\102.png" />
+    <Resource Include="Resources\Tiles\forest_64\103.png" />
+    <Resource Include="Resources\Tiles\forest_64\104.png" />
+    <Resource Include="Resources\Tiles\forest_64\105.png" />
+    <Resource Include="Resources\Tiles\forest_64\106.png" />
+    <Resource Include="Resources\Tiles\forest_64\107.png" />
+    <Resource Include="Resources\Tiles\forest_64\108.png" />
+    <Resource Include="Resources\Tiles\forest_64\109.png" />
+    <Resource Include="Resources\Tiles\forest_64\11.png" />
+    <Resource Include="Resources\Tiles\forest_64\110.png" />
+    <Resource Include="Resources\Tiles\forest_64\111.png" />
+    <Resource Include="Resources\Tiles\forest_64\112.png" />
+    <Resource Include="Resources\Tiles\forest_64\113.png" />
+    <Resource Include="Resources\Tiles\forest_64\114.png" />
+    <Resource Include="Resources\Tiles\forest_64\115.png" />
+    <Resource Include="Resources\Tiles\forest_64\116.png" />
+    <Resource Include="Resources\Tiles\forest_64\117.png" />
+    <Resource Include="Resources\Tiles\forest_64\118.png" />
+    <Resource Include="Resources\Tiles\forest_64\119.png" />
+    <Resource Include="Resources\Tiles\forest_64\12.png" />
+    <Resource Include="Resources\Tiles\forest_64\120.png" />
+    <Resource Include="Resources\Tiles\forest_64\121.png" />
+    <Resource Include="Resources\Tiles\forest_64\122.png" />
+    <Resource Include="Resources\Tiles\forest_64\123.png" />
+    <Resource Include="Resources\Tiles\forest_64\124.png" />
+    <Resource Include="Resources\Tiles\forest_64\125.png" />
+    <Resource Include="Resources\Tiles\forest_64\126.png" />
+    <Resource Include="Resources\Tiles\forest_64\127.png" />
+    <Resource Include="Resources\Tiles\forest_64\128.png" />
+    <Resource Include="Resources\Tiles\forest_64\129.png" />
+    <Resource Include="Resources\Tiles\forest_64\13.png" />
+    <Resource Include="Resources\Tiles\forest_64\130.png" />
+    <Resource Include="Resources\Tiles\forest_64\131.png" />
+    <Resource Include="Resources\Tiles\forest_64\132.png" />
+    <Resource Include="Resources\Tiles\forest_64\133.png" />
+    <Resource Include="Resources\Tiles\forest_64\134.png" />
+    <Resource Include="Resources\Tiles\forest_64\135.png" />
+    <Resource Include="Resources\Tiles\forest_64\136.png" />
+    <Resource Include="Resources\Tiles\forest_64\137.png" />
+    <Resource Include="Resources\Tiles\forest_64\138.png" />
+    <Resource Include="Resources\Tiles\forest_64\139.png" />
+    <Resource Include="Resources\Tiles\forest_64\14.png" />
+    <Resource Include="Resources\Tiles\forest_64\140.png" />
+    <Resource Include="Resources\Tiles\forest_64\141.png" />
+    <Resource Include="Resources\Tiles\forest_64\142.png" />
+    <Resource Include="Resources\Tiles\forest_64\143.png" />
+    <Resource Include="Resources\Tiles\forest_64\144.png" />
+    <Resource Include="Resources\Tiles\forest_64\145.png" />
+    <Resource Include="Resources\Tiles\forest_64\146.png" />
+    <Resource Include="Resources\Tiles\forest_64\147.png" />
+    <Resource Include="Resources\Tiles\forest_64\148.png" />
+    <Resource Include="Resources\Tiles\forest_64\149.png" />
+    <Resource Include="Resources\Tiles\forest_64\15.png" />
+    <Resource Include="Resources\Tiles\forest_64\150.png" />
+    <Resource Include="Resources\Tiles\forest_64\151.png" />
+    <Resource Include="Resources\Tiles\forest_64\152.png" />
+    <Resource Include="Resources\Tiles\forest_64\153.png" />
+    <Resource Include="Resources\Tiles\forest_64\154.png" />
+    <Resource Include="Resources\Tiles\forest_64\155.png" />
+    <Resource Include="Resources\Tiles\forest_64\156.png" />
+    <Resource Include="Resources\Tiles\forest_64\157.png" />
+    <Resource Include="Resources\Tiles\forest_64\158.png" />
+    <Resource Include="Resources\Tiles\forest_64\159.png" />
+    <Resource Include="Resources\Tiles\forest_64\16.png" />
+    <Resource Include="Resources\Tiles\forest_64\160.png" />
+    <Resource Include="Resources\Tiles\forest_64\161.png" />
+    <Resource Include="Resources\Tiles\forest_64\162.png" />
+    <Resource Include="Resources\Tiles\forest_64\163.png" />
+    <Resource Include="Resources\Tiles\forest_64\164.png" />
+    <Resource Include="Resources\Tiles\forest_64\165.png" />
+    <Resource Include="Resources\Tiles\forest_64\166.png" />
+    <Resource Include="Resources\Tiles\forest_64\167.png" />
+    <Resource Include="Resources\Tiles\forest_64\168.png" />
+    <Resource Include="Resources\Tiles\forest_64\169.png" />
+    <Resource Include="Resources\Tiles\forest_64\17.png" />
+    <Resource Include="Resources\Tiles\forest_64\170.png" />
+    <Resource Include="Resources\Tiles\forest_64\171.png" />
+    <Resource Include="Resources\Tiles\forest_64\172.png" />
+    <Resource Include="Resources\Tiles\forest_64\173.png" />
+    <Resource Include="Resources\Tiles\forest_64\174.png" />
+    <Resource Include="Resources\Tiles\forest_64\175.png" />
+    <Resource Include="Resources\Tiles\forest_64\176.png" />
+    <Resource Include="Resources\Tiles\forest_64\177.png" />
+    <Resource Include="Resources\Tiles\forest_64\178.png" />
+    <Resource Include="Resources\Tiles\forest_64\179.png" />
+    <Resource Include="Resources\Tiles\forest_64\18.png" />
+    <Resource Include="Resources\Tiles\forest_64\180.png" />
+    <Resource Include="Resources\Tiles\forest_64\181.png" />
+    <Resource Include="Resources\Tiles\forest_64\182.png" />
+    <Resource Include="Resources\Tiles\forest_64\183.png" />
+    <Resource Include="Resources\Tiles\forest_64\184.png" />
+    <Resource Include="Resources\Tiles\forest_64\185.png" />
+    <Resource Include="Resources\Tiles\forest_64\186.png" />
+    <Resource Include="Resources\Tiles\forest_64\187.png" />
+    <Resource Include="Resources\Tiles\forest_64\188.png" />
+    <Resource Include="Resources\Tiles\forest_64\189.png" />
+    <Resource Include="Resources\Tiles\forest_64\19.png" />
+    <Resource Include="Resources\Tiles\forest_64\190.png" />
+    <Resource Include="Resources\Tiles\forest_64\191.png" />
+    <Resource Include="Resources\Tiles\forest_64\192.png" />
+    <Resource Include="Resources\Tiles\forest_64\193.png" />
+    <Resource Include="Resources\Tiles\forest_64\194.png" />
+    <Resource Include="Resources\Tiles\forest_64\195.png" />
+    <Resource Include="Resources\Tiles\forest_64\196.png" />
+    <Resource Include="Resources\Tiles\forest_64\197.png" />
+    <Resource Include="Resources\Tiles\forest_64\198.png" />
+    <Resource Include="Resources\Tiles\forest_64\199.png" />
+    <Resource Include="Resources\Tiles\forest_64\2.png" />
+    <Resource Include="Resources\Tiles\forest_64\20.png" />
+    <Resource Include="Resources\Tiles\forest_64\200.png" />
+    <Resource Include="Resources\Tiles\forest_64\201.png" />
+    <Resource Include="Resources\Tiles\forest_64\202.png" />
+    <Resource Include="Resources\Tiles\forest_64\203.png" />
+    <Resource Include="Resources\Tiles\forest_64\204.png" />
+    <Resource Include="Resources\Tiles\forest_64\205.png" />
+    <Resource Include="Resources\Tiles\forest_64\206.png" />
+    <Resource Include="Resources\Tiles\forest_64\207.png" />
+    <Resource Include="Resources\Tiles\forest_64\208.png" />
+    <Resource Include="Resources\Tiles\forest_64\209.png" />
+    <Resource Include="Resources\Tiles\forest_64\21.png" />
+    <Resource Include="Resources\Tiles\forest_64\210.png" />
+    <Resource Include="Resources\Tiles\forest_64\211.png" />
+    <Resource Include="Resources\Tiles\forest_64\212.png" />
+    <Resource Include="Resources\Tiles\forest_64\213.png" />
+    <Resource Include="Resources\Tiles\forest_64\214.png" />
+    <Resource Include="Resources\Tiles\forest_64\215.png" />
+    <Resource Include="Resources\Tiles\forest_64\216.png" />
+    <Resource Include="Resources\Tiles\forest_64\217.png" />
+    <Resource Include="Resources\Tiles\forest_64\218.png" />
+    <Resource Include="Resources\Tiles\forest_64\219.png" />
+    <Resource Include="Resources\Tiles\forest_64\22.png" />
+    <Resource Include="Resources\Tiles\forest_64\220.png" />
+    <Resource Include="Resources\Tiles\forest_64\221.png" />
+    <Resource Include="Resources\Tiles\forest_64\222.png" />
+    <Resource Include="Resources\Tiles\forest_64\223.png" />
+    <Resource Include="Resources\Tiles\forest_64\224.png" />
+    <Resource Include="Resources\Tiles\forest_64\225.png" />
+    <Resource Include="Resources\Tiles\forest_64\226.png" />
+    <Resource Include="Resources\Tiles\forest_64\227.png" />
+    <Resource Include="Resources\Tiles\forest_64\228.png" />
+    <Resource Include="Resources\Tiles\forest_64\229.png" />
+    <Resource Include="Resources\Tiles\forest_64\23.png" />
+    <Resource Include="Resources\Tiles\forest_64\230.png" />
+    <Resource Include="Resources\Tiles\forest_64\231.png" />
+    <Resource Include="Resources\Tiles\forest_64\232.png" />
+    <Resource Include="Resources\Tiles\forest_64\233.png" />
+    <Resource Include="Resources\Tiles\forest_64\234.png" />
+    <Resource Include="Resources\Tiles\forest_64\235.png" />
+    <Resource Include="Resources\Tiles\forest_64\236.png" />
+    <Resource Include="Resources\Tiles\forest_64\237.png" />
+    <Resource Include="Resources\Tiles\forest_64\238.png" />
+    <Resource Include="Resources\Tiles\forest_64\239.png" />
+    <Resource Include="Resources\Tiles\forest_64\24.png" />
+    <Resource Include="Resources\Tiles\forest_64\240.png" />
+    <Resource Include="Resources\Tiles\forest_64\241.png" />
+    <Resource Include="Resources\Tiles\forest_64\242.png" />
+    <Resource Include="Resources\Tiles\forest_64\243.png" />
+    <Resource Include="Resources\Tiles\forest_64\244.png" />
+    <Resource Include="Resources\Tiles\forest_64\245.png" />
+    <Resource Include="Resources\Tiles\forest_64\246.png" />
+    <Resource Include="Resources\Tiles\forest_64\247.png" />
+    <Resource Include="Resources\Tiles\forest_64\248.png" />
+    <Resource Include="Resources\Tiles\forest_64\249.png" />
+    <Resource Include="Resources\Tiles\forest_64\25.png" />
+    <Resource Include="Resources\Tiles\forest_64\250.png" />
+    <Resource Include="Resources\Tiles\forest_64\251.png" />
+    <Resource Include="Resources\Tiles\forest_64\252.png" />
+    <Resource Include="Resources\Tiles\forest_64\253.png" />
+    <Resource Include="Resources\Tiles\forest_64\254.png" />
+    <Resource Include="Resources\Tiles\forest_64\255.png" />
+    <Resource Include="Resources\Tiles\forest_64\26.png" />
+    <Resource Include="Resources\Tiles\forest_64\27.png" />
+    <Resource Include="Resources\Tiles\forest_64\28.png" />
+    <Resource Include="Resources\Tiles\forest_64\29.png" />
+    <Resource Include="Resources\Tiles\forest_64\3.png" />
+    <Resource Include="Resources\Tiles\forest_64\30.png" />
+    <Resource Include="Resources\Tiles\forest_64\31.png" />
+    <Resource Include="Resources\Tiles\forest_64\32.png" />
+    <Resource Include="Resources\Tiles\forest_64\33.png" />
+    <Resource Include="Resources\Tiles\forest_64\34.png" />
+    <Resource Include="Resources\Tiles\forest_64\35.png" />
+    <Resource Include="Resources\Tiles\forest_64\36.png" />
+    <Resource Include="Resources\Tiles\forest_64\37.png" />
+    <Resource Include="Resources\Tiles\forest_64\38.png" />
+    <Resource Include="Resources\Tiles\forest_64\39.png" />
+    <Resource Include="Resources\Tiles\forest_64\4.png" />
+    <Resource Include="Resources\Tiles\forest_64\40.png" />
+    <Resource Include="Resources\Tiles\forest_64\41.png" />
+    <Resource Include="Resources\Tiles\forest_64\42.png" />
+    <Resource Include="Resources\Tiles\forest_64\43.png" />
+    <Resource Include="Resources\Tiles\forest_64\44.png" />
+    <Resource Include="Resources\Tiles\forest_64\45.png" />
+    <Resource Include="Resources\Tiles\forest_64\46.png" />
+    <Resource Include="Resources\Tiles\forest_64\47.png" />
+    <Resource Include="Resources\Tiles\forest_64\48.png" />
+    <Resource Include="Resources\Tiles\forest_64\49.png" />
+    <Resource Include="Resources\Tiles\forest_64\5.png" />
+    <Resource Include="Resources\Tiles\forest_64\50.png" />
+    <Resource Include="Resources\Tiles\forest_64\51.png" />
+    <Resource Include="Resources\Tiles\forest_64\52.png" />
+    <Resource Include="Resources\Tiles\forest_64\53.png" />
+    <Resource Include="Resources\Tiles\forest_64\54.png" />
+    <Resource Include="Resources\Tiles\forest_64\55.png" />
+    <Resource Include="Resources\Tiles\forest_64\56.png" />
+    <Resource Include="Resources\Tiles\forest_64\57.png" />
+    <Resource Include="Resources\Tiles\forest_64\58.png" />
+    <Resource Include="Resources\Tiles\forest_64\59.png" />
+    <Resource Include="Resources\Tiles\forest_64\6.png" />
+    <Resource Include="Resources\Tiles\forest_64\60.png" />
+    <Resource Include="Resources\Tiles\forest_64\61.png" />
+    <Resource Include="Resources\Tiles\forest_64\62.png" />
+    <Resource Include="Resources\Tiles\forest_64\63.png" />
+    <Resource Include="Resources\Tiles\forest_64\64.png" />
+    <Resource Include="Resources\Tiles\forest_64\65.png" />
+    <Resource Include="Resources\Tiles\forest_64\66.png" />
+    <Resource Include="Resources\Tiles\forest_64\67.png" />
+    <Resource Include="Resources\Tiles\forest_64\68.png" />
+    <Resource Include="Resources\Tiles\forest_64\69.png" />
+    <Resource Include="Resources\Tiles\forest_64\7.png" />
+    <Resource Include="Resources\Tiles\forest_64\70.png" />
+    <Resource Include="Resources\Tiles\forest_64\71.png" />
+    <Resource Include="Resources\Tiles\forest_64\72.png" />
+    <Resource Include="Resources\Tiles\forest_64\73.png" />
+    <Resource Include="Resources\Tiles\forest_64\74.png" />
+    <Resource Include="Resources\Tiles\forest_64\75.png" />
+    <Resource Include="Resources\Tiles\forest_64\76.png" />
+    <Resource Include="Resources\Tiles\forest_64\77.png" />
+    <Resource Include="Resources\Tiles\forest_64\78.png" />
+    <Resource Include="Resources\Tiles\forest_64\79.png" />
+    <Resource Include="Resources\Tiles\forest_64\8.png" />
+    <Resource Include="Resources\Tiles\forest_64\80.png" />
+    <Resource Include="Resources\Tiles\forest_64\81.png" />
+    <Resource Include="Resources\Tiles\forest_64\82.png" />
+    <Resource Include="Resources\Tiles\forest_64\83.png" />
+    <Resource Include="Resources\Tiles\forest_64\84.png" />
+    <Resource Include="Resources\Tiles\forest_64\85.png" />
+    <Resource Include="Resources\Tiles\forest_64\86.png" />
+    <Resource Include="Resources\Tiles\forest_64\87.png" />
+    <Resource Include="Resources\Tiles\forest_64\88.png" />
+    <Resource Include="Resources\Tiles\forest_64\89.png" />
+    <Resource Include="Resources\Tiles\forest_64\9.png" />
+    <Resource Include="Resources\Tiles\forest_64\90.png" />
+    <Resource Include="Resources\Tiles\forest_64\91.png" />
+    <Resource Include="Resources\Tiles\forest_64\92.png" />
+    <Resource Include="Resources\Tiles\forest_64\93.png" />
+    <Resource Include="Resources\Tiles\forest_64\94.png" />
+    <Resource Include="Resources\Tiles\forest_64\95.png" />
+    <Resource Include="Resources\Tiles\forest_64\96.png" />
+    <Resource Include="Resources\Tiles\forest_64\97.png" />
+    <Resource Include="Resources\Tiles\forest_64\98.png" />
+    <Resource Include="Resources\Tiles\forest_64\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Selection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tiles\custom\empty.png" />
+    <Resource Include="Resources\Tiles\custom\Enemy.png" />
+    <Resource Include="Resources\Tiles\custom\P1.png" />
+    <Resource Include="Resources\Tiles\custom\P2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
